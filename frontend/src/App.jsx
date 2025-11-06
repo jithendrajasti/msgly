@@ -38,6 +38,7 @@ const App = () => {
         <Route path='/reset' element={!authUser ? <ResetPass /> : <Navigate to={"/"} />}/>
         <Route path='/settings' element={<Settings />} />
         <Route path='/profile' element={authUser ? <ProfilePage /> : <Navigate to={"/login"} />} />
+        <Route path='*' element={authUser ? <HomePage /> : <Navigate to={"/login"} />} />
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />
     </div>
